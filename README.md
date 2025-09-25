@@ -40,3 +40,34 @@ If no profile is set, the framework defaults to **dev** profile via `CucumberSpr
 - `src/test/resources/features` → Feature files
 - `src/test/resources/application-*.properties` → Environment configs
 
+src
+└── test
+└── java
+└── automation         <-- ✅ ROOT package
+├── TestApplication.java
+│
+├── config
+│     ├── CucumberSpringConfiguration.java
+│     └── ApiConfig.java
+│
+├── services
+│     ├── PostService.java
+│     ├── UserService.java
+│     └── AuthService.java
+│
+├── steps
+│     └── CrudStepDefinitions.java
+│
+└── runner
+└── TestRunner.java
+
+
+How each part works
+1. Root package → automation
+
+Contains TestApplication.java
+
+Acts as the base for Spring Boot scanning
+
+Everything inside (config, services, steps) will be scanned automatically
+
