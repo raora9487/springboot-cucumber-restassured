@@ -1,9 +1,0 @@
-config\ApiConfig.class
-steps\CrudStepDefinitions.class
-reporting\ExtentManager.class
-reporting\ExtentTestManager.class
-config\TestApplication.class
-config\CucumberSpringConfiguration.class
-reporting\ReportUtils.class
-hooks\Hooks.class
-runner\TestRunner.class

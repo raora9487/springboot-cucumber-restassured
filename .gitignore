@@ -1,0 +1,17 @@
+# Maven
+target/
+*.class
+
+# IntelliJ
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Reports
+*.html
+*.json
+
+# OS
+.DS_Store
