@@ -13,7 +13,8 @@ import org.junit.runner.RunWith;
                 "html:target/cucumber-reports.html",
                 "json:target/cucumber-reports/cucumber.json"
         }
-                                // optional, only run @crud scenarios
+//        tags = "@demoApiTests" // optional
+
 )
 public class TestRunner {
 }

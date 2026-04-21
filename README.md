@@ -71,3 +71,120 @@ Acts as the base for Spring Boot scanning
 
 Everything inside (config, services, steps) will be scanned automatically
 
+## 🌐 Environment Configuration (DEV / PRE / PROD)
+
+This framework supports multiple environments using Spring profiles:
+
+- application-dev.properties
+- application-pre.properties
+- application-prod.properties
+
+---
+
+## 🔧 How Environment Selection Works
+
+The active environment is controlled using JVM (VM) options.
+
+Example:
+
+-Dspring.profiles.active=dev
+
+or
+
+-Dspring.profiles.active=pre
+
+Based on this, Spring Boot automatically loads:
+
+application-{profile}.properties
+
+---
+
+## 🌍 Base URL Configuration
+
+The base URL for APIs is configured in properties file:
+
+api.base.url=...
+
+Example:
+
+# application-dev.properties
+api.base.url=https://jsonplaceholder.typicode.com
+
+---
+
+## ⚠️ Note on jsonplaceholder API
+
+This project uses:
+
+https://jsonplaceholder.typicode.com
+
+This is a **public mock API**, not a real production system.
+
+### Important points:
+
+- No separate environments (DEV / PRE / PROD)
+- Same URL is used everywhere
+- Data is fake and used only for testing/demo purposes
+
+---
+
+## 🤔 Why Still Use Environment Profiles?
+
+Even though the URL is same for this demo API, the framework is designed for real-world usage.
+
+In real projects, environments typically look like:
+
+DEV  → https://dev.api.com  
+PRE  → https://pre.api.com  
+PROD → https://api.com
+
+---
+
+## ✅ Current Approach
+
+Since jsonplaceholder has only one URL, we use the same value across profiles:
+
+# application-dev.properties
+api.base.url=https://jsonplaceholder.typicode.com
+
+# application-pre.properties
+api.base.url=https://jsonplaceholder.typicode.com
+
+---
+
+## 🚀 Why This Design is Useful
+
+Even though the URL is same now, this setup allows:
+
+- Easy switch to real environments later
+- No code changes required
+- Only property update needed
+
+---
+
+## 👍 Best Practices
+
+- Avoid hardcoding base URLs in code
+- Always use environment-based configuration
+- Keep framework flexible and scalable
+
+---
+
+## 🔥 Example Run Commands
+
+### Run DEV
+
+-ea -Dspring.profiles.active=dev -Dcucumber.filter.tags="@demoApiTests"
+
+### Run PRE
+
+-ea -Dspring.profiles.active=pre -Dcucumber.filter.tags="@crud"
+
+---
+
+## 🎯 Summary
+
+- Profiles control environment
+- Properties control configuration
+- Same URL used only because this is a mock API
+- Framework is ready for real-world scaling
