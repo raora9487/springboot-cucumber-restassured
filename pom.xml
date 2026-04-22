@@ -104,9 +104,6 @@
                     <includes>
                         <include>**/TestRunner.java</include>
                     </includes>
-                    <systemPropertyVariables>
-                        <cucumber.filter.tags>@crud</cucumber.filter.tags>
-                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>

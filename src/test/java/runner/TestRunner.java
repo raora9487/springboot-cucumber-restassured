@@ -12,8 +12,8 @@ import org.junit.runner.RunWith;
                 "pretty",
                 "html:target/cucumber-reports.html",
                 "json:target/cucumber-reports/cucumber.json"
-        }
-//        tags = "@demoApiTests" // optional
+        },
+        tags = "@demoApiTests" // optional
 
 )
 public class TestRunner {
